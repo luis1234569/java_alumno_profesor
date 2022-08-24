@@ -1,3 +1,5 @@
+package ejercicio;
+
 public abstract class Persona {
     private String name;
     private char sexo;
@@ -13,14 +15,15 @@ public abstract class Persona {
 
     public Persona(){
 
-        int determina_sexo= MetodosSueltos.getRandomNumber(0,1);
+        int determina_sexo= Metodos.getRandomNumber(0,1);
         if(determina_sexo==0){
-            name = NOMBRES_CHICOS[MetodosSueltos.getRandomNumber(0,4)];
+            name = NOMBRES_CHICOS[Metodos.getRandomNumber(0,4)];
             sexo = 'h';
         } else if (determina_sexo==1) {
-            name = NOMBRES_CHICAS[MetodosSueltos.getRandomNumber(0,4)];
+            name = NOMBRES_CHICAS[Metodos.getRandomNumber(0,4)];
             sexo = 'm';
         }
+        disponibilidad();
     }
 
     public String getName() {
@@ -64,4 +67,3 @@ public abstract class Persona {
 
     public abstract void disponibilidad();
 }
-
